@@ -30,9 +30,12 @@ Route::get('/about', function () {
     return view('about', ['nombre'=>"Juan Carlos"]);
 });
 
+Route::get('/pdf', [App\Http\Controllers\ProductosController::class, 'getPDF'])->name('produtos.pdf');
+
 Route::get('/productos', [App\Http\Controllers\ProductosController::class, 'index']);
 
 Route::get('/productos/mostrar', [App\Http\Controllers\ProductosController::class, 'mostrar']);
+
 Route::get('/productos/show', [App\Http\Controllers\ProductosController::class, 'show']);
 
 Route::get('/productos/crear', [App\Http\Controllers\ProductosController::class, 'crear']);
